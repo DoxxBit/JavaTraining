@@ -7,7 +7,7 @@ public class Exer1 {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		
+		/*loops the calculator while has next double so it can do operations */ 
 		while(scan.hasNextDouble()){
 			
 			if(!scan.hasNextDouble()) break;
@@ -19,10 +19,13 @@ public class Exer1 {
 			if(!scan.hasNextDouble()) break;
 			double num2 = scan.nextDouble();
 			
+			/*it sets the value of the result only if num2 isn't 
+			0 because the divition will return infinity insted of impossible*/
 			double result = operation(num, sign, num2);
 			System.out.println((num2 == 0)? "Impossible": result);
 			
-			
+			/*it checks if the the next isn't a double and it starts with a sign so if the user wants
+			 continue to calculate. */
 			while(!scan.hasNextDouble()){
 				if(!scan.hasNext()) break;
 				String sign1 = scan.next();
@@ -36,7 +39,7 @@ public class Exer1 {
 		
 		scan.close();
 	}
-	
+	// this is the method that makes and returns operations
 	static double operation(double num, String sign, double num2) {
 		
 		switch(sign) {
